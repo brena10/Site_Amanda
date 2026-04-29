@@ -85,7 +85,7 @@
 }
 
 html {
-  scroll-behavior: smooth;       /* scroll suave ao clicar nos links de nav */
+  scroll-behavior: smooth;
   font-size: 16px;
 }
 
@@ -123,7 +123,6 @@ button {
    3. UTILITÁRIOS
    ============================================================ */
 
-/* Container centralizado com padding lateral */
 .container {
   width: 100%;
   max-width: var(--max-width);
@@ -131,7 +130,6 @@ button {
   padding: 0 var(--space-md);
 }
 
-/* Largura total */
 .w-full { width: 100%; }
 
 /* Ícone decorativo de seção (linha — ícone — linha) */
@@ -157,11 +155,9 @@ button {
   stroke-width: 1.5;
 }
 
-/* Versão branca do ícone (para seções escuras) */
 .section-icon--white .section-icon__line { background: rgba(255,255,255,0.6); }
 .section-icon--white .section-icon__icon { color: rgba(255,255,255,0.9); }
 
-/* Títulos de seção */
 .section-title {
   font-family: var(--font-heading);
   font-size: var(--fs-2xl);
@@ -197,7 +193,6 @@ button {
 
 .btn:active { transform: translateY(1px); }
 
-/* Botão verde-sálvia (primário) */
 .btn--primary {
   background: var(--color-sage);
   color: var(--color-white);
@@ -209,13 +204,11 @@ button {
   box-shadow: var(--shadow-sm);
 }
 
-/* Botão grande */
 .btn--lg {
   padding: 1rem 2.5rem;
   font-size: var(--fs-base);
 }
 
-/* Botão contorno branco (para fundo colorido) */
 .btn--outline-white {
   background: transparent;
   color: var(--color-white);
@@ -225,7 +218,6 @@ button {
   background: rgba(255,255,255,0.15);
 }
 
-/* Botão WhatsApp */
 .btn--whatsapp {
   background: #25d366;
   color: var(--color-white);
@@ -243,10 +235,8 @@ button {
 }
 .btn--whatsapp:hover { background: #1da851; border-color: #1da851; }
 
-/* Ícones Lucide inline (tamanho padrão nos botões) */
 .btn i, .btn svg { width: 18px; height: 18px; }
 
-/* Cartão genérico */
 .card {
   border-radius: var(--radius-md);
   padding: var(--space-lg);
@@ -268,7 +258,6 @@ button {
   top: 0;
   z-index: 100;
   background: var(--color-bg);
-  /* Sombra aparece via JS ao rolar a página */
   transition: box-shadow var(--transition);
 }
 
@@ -291,7 +280,6 @@ button {
   object-fit: contain;
 }
 
-/* Links de navegação desktop */
 .header__nav-list {
   display: flex;
   gap: var(--space-lg);
@@ -308,7 +296,6 @@ button {
   transition: color var(--transition);
 }
 
-/* Sublinhado animado ao hover */
 .nav-link::after {
   content: '';
   position: absolute;
@@ -322,11 +309,9 @@ button {
 .nav-link:hover { color: var(--color-terra); }
 .nav-link:hover::after { width: 100%; }
 
-/* Link ativo (marcado via JS ao rolar) */
 .nav-link.active { color: var(--color-terra); }
 .nav-link.active::after { width: 100%; background: var(--color-terra); }
 
-/* Botão hamburguer (visível apenas em mobile) */
 .header__hamburger {
   display: none;
   flex-direction: column;
@@ -343,7 +328,6 @@ button {
   transition: transform var(--transition), opacity var(--transition);
 }
 
-/* Estado aberto do hamburguer */
 .header__hamburger.open span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
@@ -354,7 +338,6 @@ button {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Menu mobile (dropdown) */
 .header__mobile-menu {
   display: none;
   background: var(--color-bg);
@@ -404,7 +387,6 @@ button {
   margin-bottom: var(--space-lg);
 }
 
-/* Três cartões de frases na hero */
 .hero__cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -431,7 +413,6 @@ button {
   transform: translateY(-3px);
 }
 
-/* Cartão com destaque verde */
 .hero__card--accent {
   background: var(--color-sage-light);
   border-color: transparent;
@@ -445,7 +426,6 @@ button {
   padding: var(--space-2xl) 0;
 }
 
-/* Layout lado a lado: foto | texto */
 .sobre__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -458,14 +438,14 @@ button {
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-lg);
-  aspect-ratio: 3/4;     /* proporção retrato */
+  aspect-ratio: 3/4;
 }
 
 .sobre__photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top;  /* foca no rosto */
+  object-position: top;
 }
 
 .sobre__name {
@@ -489,7 +469,6 @@ button {
   color: var(--color-text);
 }
 
-/* Lista com bullet customizado */
 .sobre__list {
   margin-top: var(--space-md);
   display: flex;
@@ -527,7 +506,6 @@ button {
 .card--accent .card__title { color: var(--color-white); }
 .card--accent p { color: rgba(255,255,255,0.92); }
 
-/* Mas o card--accent da abordagem usa verde-sálvia, então texto escuro fica melhor */
 .abordagem__grid .card--accent {
   background: var(--color-sage);
   color: var(--color-white);
@@ -543,7 +521,6 @@ button {
   margin-bottom: var(--space-sm);
 }
 
-/* Citação em destaque */
 .abordagem__quote {
   background: var(--color-white);
   border: 1px solid var(--color-border);
@@ -566,7 +543,6 @@ button {
   padding: var(--space-2xl) 0;
 }
 
-/* Grid dos dois cards de serviço */
 .servicos__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -586,12 +562,10 @@ button {
   transform: translateY(-2px);
 }
 
-/* Card presencial com borda colorida */
 .service-card--presencial {
   border: 2px solid var(--color-terra-light);
 }
 
-/* Ícone quadrado colorido */
 .service-card__icon {
   width: 52px;
   height: 52px;
@@ -641,7 +615,6 @@ button {
   font-weight: 700;
 }
 
-/* Bloco "Sinais de que você pode se beneficiar" */
 .sinais {
   background: var(--color-bg);
   border-radius: var(--radius-md);
@@ -693,7 +666,6 @@ button {
   overflow: hidden;
 }
 
-/* Folhas decorativas de fundo via pseudo-elementos */
 .cta-agendar__bg-leaves {
   position: absolute;
   inset: 0;
@@ -752,7 +724,6 @@ button {
   margin-bottom: var(--space-lg);
 }
 
-/* Cada item de contato (ícone + texto) */
 .contato__info-item {
   display: flex;
   gap: var(--space-sm);
@@ -780,7 +751,6 @@ button {
   color: var(--color-text-light);
 }
 
-/* Citação no contato */
 .contato__quote {
   background: var(--color-bg-section);
   border-radius: var(--radius-md);
@@ -793,7 +763,6 @@ button {
   line-height: 1.6;
 }
 
-/* Formulário */
 .contato__form-wrap {
   background: var(--color-white);
   border: 1px solid var(--color-border);
@@ -851,7 +820,6 @@ button {
   box-shadow: 0 0 0 3px rgba(138, 171, 150, 0.2);
 }
 
-/* Feedback do formulário */
 .form-feedback {
   margin-top: var(--space-sm);
   font-size: var(--fs-sm);
@@ -886,7 +854,6 @@ button {
   padding-bottom: var(--space-xl);
 }
 
-/* Logotipo no footer (fundo branco para contraste) */
 .footer__logo-wrap {
   background: var(--color-white);
   display: inline-block;
@@ -906,7 +873,6 @@ button {
   margin-bottom: var(--space-md);
 }
 
-/* Ícones sociais no footer */
 .footer__socials {
   display: flex;
   gap: var(--space-sm);
@@ -956,7 +922,6 @@ button {
   margin-bottom: 8px;
 }
 
-/* Rodapé inferior com copyright */
 .footer__bottom {
   border-top: 1px solid rgba(255,255,255,0.12);
   padding: var(--space-md) 0;
@@ -970,8 +935,6 @@ button {
 /* ============================================================
    12. MODAL DE AGENDAMENTO
    ============================================================ */
-
-/* Overlay escuro por baixo do modal */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -987,7 +950,6 @@ button {
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* Estado visível do overlay */
 .modal-overlay.open {
   opacity: 1;
   visibility: visible;
@@ -997,9 +959,9 @@ button {
   background: var(--color-white);
   border-radius: var(--radius-lg);
   padding: var(--space-xl);
-  max-width: 700px;
+  max-width: 820px;
   width: 100%;
-  max-height: 90vh;
+  max-height: 92vh;
   overflow-y: auto;
   position: relative;
   transform: translateY(20px);
@@ -1043,19 +1005,27 @@ button {
   margin-bottom: var(--space-lg);
 }
 
-/* Container do iframe do Google Calendar */
+/* Container do widget Calendly */
 .modal__calendar {
   width: 100%;
-  min-height: 400px;
+  min-height: 650px;
   border-radius: var(--radius-md);
   overflow: hidden;
   background: var(--color-bg);
   margin-bottom: var(--space-lg);
 }
 
+/* Widget inline do Calendly — tamanho fixo obrigatório */
+#calendly-widget {
+  min-width: 320px;
+  height: 660px;
+}
+
+/* Garante que o iframe interno do Calendly ocupe todo o espaço */
 .modal__calendar iframe {
-  width: 100%;
-  height: 500px;
+  width: 100% !important;
+  min-width: 320px !important;
+  height: 660px !important;
   border: none;
 }
 
@@ -1070,7 +1040,6 @@ button {
   color: var(--color-text-light);
 }
 
-/* Alternativa WhatsApp no modal */
 .modal__alt {
   text-align: center;
   padding-top: var(--space-md);
@@ -1107,14 +1076,12 @@ button {
 .whatsapp-fab img {
   width: 30px;
   height: 30px;
-  filter: brightness(0) invert(1); /* deixa branco */
+  filter: brightness(0) invert(1);
 }
 
 /* ============================================================
    14. ANIMAÇÕES
    ============================================================ */
-
-/* Entrada de elementos ao rolar a página (usada pelo Intersection Observer) */
 .fade-in {
   opacity: 0;
   transform: translateY(24px);
@@ -1125,12 +1092,10 @@ button {
   transform: translateY(0);
 }
 
-/* Delay escalonado para os filhos de um grupo */
 .fade-in:nth-child(2) { transition-delay: 0.1s; }
 .fade-in:nth-child(3) { transition-delay: 0.2s; }
 .fade-in:nth-child(4) { transition-delay: 0.3s; }
 
-/* Rotação contínua (loading) */
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
@@ -1156,7 +1121,7 @@ button {
   }
 
   .footer__brand {
-    grid-column: 1 / -1;  /* ocupa as duas colunas */
+    grid-column: 1 / -1;
   }
 }
 
@@ -1170,16 +1135,13 @@ button {
     --space-xl:  2.5rem;
   }
 
-  /* Header: esconde nav desktop, mostra hamburguer */
   .header__nav,
   .header .btn--agendar { display: none; }
   .header__hamburger { display: flex; }
 
-  /* Hero */
   .hero { padding: var(--space-xl) 0; }
   .hero__cards { grid-template-columns: 1fr; }
 
-  /* Sobre */
   .sobre__grid {
     grid-template-columns: 1fr;
     text-align: center;
@@ -1191,20 +1153,30 @@ button {
   }
   .sobre__list li { text-align: left; }
 
-  /* Abordagem */
   .abordagem__grid { grid-template-columns: 1fr; }
 
-  /* Serviços */
   .servicos__grid { grid-template-columns: 1fr; }
   .sinais__grid { grid-template-columns: 1fr; }
 
-  /* Contato */
   .contato__grid { grid-template-columns: 1fr; }
 
-  /* Footer */
   .footer__inner {
     grid-template-columns: 1fr;
     gap: var(--space-lg);
+  }
+
+  /* Modal em mobile */
+  .modal {
+    padding: var(--space-md);
+    max-height: 95vh;
+  }
+
+  #calendly-widget {
+    height: 580px;
+  }
+
+  .modal__calendar iframe {
+    height: 580px !important;
   }
 }
 
@@ -1224,8 +1196,13 @@ button {
     align-items: center;
   }
 
-  .modal { padding: var(--space-md); }
-
-  /* Contato: formulário com menos padding */
   .contato__form-wrap { padding: var(--space-md); }
+
+  #calendly-widget {
+    height: 520px;
+  }
+
+  .modal__calendar iframe {
+    height: 520px !important;
+  }
 }
