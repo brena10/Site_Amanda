@@ -13,6 +13,12 @@
   <!-- Lucide Icons via CDN (ícones leves e elegantes) -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 
+  <!--
+    NOTA: O script do Calendly NÃO é carregado aqui no <head>.
+    Ele é carregado dinamicamente pelo script.js apenas quando o modal
+    de agendamento é aberto, garantindo a inicialização correta do widget.
+  -->
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -36,7 +42,7 @@
         </ul>
       </nav>
 
-      <!-- Botão agendar (chama o modal do Google Agenda) -->
+      <!-- Botão agendar (chama o modal do Calendly) -->
       <button class="btn btn--primary btn--agendar" onclick="abrirAgendamento()">
         Agendar
       </button>
@@ -266,9 +272,7 @@
 
   <!-- ===== CTA AGENDAR ===== -->
   <section class="cta-agendar">
-    <div class="cta-agendar__bg-leaves" aria-hidden="true">
-      <!-- Folhas decorativas via CSS -->
-    </div>
+    <div class="cta-agendar__bg-leaves" aria-hidden="true"></div>
     <div class="container cta-agendar__inner">
 
       <div class="section-icon section-icon--white">
@@ -339,7 +343,11 @@
           </div>
 
           <div class="contato__info-item">
-            <i data-lucide="instagram"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:2px; color: var(--color-sage);">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
             <div>
               <strong>Instagram</strong>
               <span>@amandabalestra.psi</span>
@@ -421,7 +429,11 @@
         <!-- Ícones sociais -->
         <div class="footer__socials">
           <a href="https://instagram.com/amandabalestra.psi" target="_blank" rel="noopener" aria-label="Instagram">
-            <i data-lucide="instagram"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
           </a>
           <a href="mailto:contato@amandabalestra.com.br" aria-label="E-mail">
             <i data-lucide="mail"></i>
@@ -459,15 +471,14 @@
     </div>
   </footer>
 
-  <!-- ===== MODAL DE AGENDAMENTO (Google Agenda) ===== -->
+  <!-- ===== MODAL DE AGENDAMENTO (Calendly) ===== -->
   <!--
-    COMO FUNCIONA A INTEGRAÇÃO COM GOOGLE AGENDA:
-    1. Acesse calendar.google.com
-    2. Crie um calendário chamado "Consultas Amanda Balestra"
-    3. Vá em Configurações → Integrar calendário
-    4. Copie o "Código de incorporação" (iframe)
-    5. Cole o src do iframe na variável GOOGLE_CALENDAR_URL no script.js
-    Alternativamente, use o Google Calendar Appointment Scheduling (Calendly-like, gratuito).
+    COMO FUNCIONA A INTEGRAÇÃO COM CALENDLY:
+    1. Acesse calendly.com e crie sua conta gratuita
+    2. Configure seu tipo de evento (ex: "Consulta 50min")
+    3. Copie a URL do seu evento (ex: https://calendly.com/seu-usuario/consulta)
+    4. Cole essa URL na variável CONFIG.CALENDLY_URL no arquivo script.js
+    O widget será carregado automaticamente ao abrir o modal.
   -->
   <div class="modal-overlay" id="modalAgendamento" role="dialog" aria-modal="true" aria-label="Agendar consulta">
     <div class="modal">
@@ -479,7 +490,7 @@
         Escolha um horário disponível na agenda abaixo para agendar sua consulta.
       </p>
 
-      <!-- O iframe do Google Calendar é inserido dinamicamente pelo script.js -->
+      <!-- O widget do Calendly é inserido dinamicamente pelo script.js -->
       <div class="modal__calendar" id="calendarContainer">
         <div class="modal__loading">
           <i data-lucide="loader-circle" class="spin"></i>
@@ -487,7 +498,7 @@
         </div>
       </div>
 
-      <!-- Botão alternativo para WhatsApp caso o Google Calendar não esteja configurado -->
+      <!-- Botão alternativo para WhatsApp -->
       <div class="modal__alt">
         <p>Prefere agendar pelo WhatsApp?</p>
         <a
