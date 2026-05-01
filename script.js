@@ -23,7 +23,7 @@ const CONFIG = {
     CALENDLY_URL: 'https://calendly.com/psicologa-amandabalestra/consulta-amanda-balestra',
 
   // --- WHATSAPP ---
-  WHATSAPP_NUMBER: '5511999999999',
+  WHATSAPP_NUMBER: '5512988945587',
   WHATSAPP_MESSAGE: 'Olá, gostaria de agendar uma consulta.',
 
   // --- EMAILJS (opcional) ---
